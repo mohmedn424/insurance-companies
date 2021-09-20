@@ -1,3 +1,33 @@
+html {
+  --background: #fff;
+  --font-color: #1a1a1a;
+  --light-grey: #e5e5e5;
+  --light-green: #06d6a0;
+  --light-red: #f34c4c;
+  --light-yellow: #ffb73b;
+  --dark-gray-color: #2e2e2e;
+  --moov-color: #6c63ff;
+}
+
+html[data-theme='dark'] {
+  --primary: #bb86fc;
+  --primary-varient: #3700b3;
+  --secondary: #03dac6;
+  --background: #1a1a1a;
+  --font-color: #fff;
+  --light-grey: #353535;
+  --light-green: #06d6a0;
+  --light-yellow: #ffb73b;
+  --dark-gray-color: #2e2e2e;
+  --light-red: #f34c4c;
+}
+
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +37,7 @@ html {
   background-size: cover;
   width: 100%;
   height: 100%;
-  background: #e9e9e9;
+  background: var(--background);
   font-family: 'tajawal';
 }
 
@@ -23,17 +53,17 @@ html {
   vertical-align: bottom;
   background-color: currentColor;
   border-radius: 50%;
-  color: #06d6a0;
+  color: var(--light-green);
 }
 
 .special {
-  color: #ffb73b;
+  color: var(--light-yellow);
 }
 
 .stop {
   left: 10%;
   top: 34%;
-  color: #f34c4c;
+  color: var(--light-red);
   opacity: 0;
   -webkit-animation: 1s linear infinite ind;
   animation: 1s linear infinite ind;
@@ -76,7 +106,7 @@ html {
 h1 {
   font-size: 4em;
   text-align: center;
-  color: #2e2e2e;
+  color: var(--font-color);
   font-weight: bold;
 }
 
@@ -113,7 +143,10 @@ h1 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-color: #2e2e2e;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: var(--dark-gray-color);
   cursor: pointer;
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -158,6 +191,10 @@ h1 {
         -ms-flex-pack: center;
             justify-content: center;
   }
+  .dark-mode-button {
+    padding: 0;
+    max-height: 9px;
+  }
   .button {
     font-size: 1em;
   }
@@ -196,7 +233,7 @@ h1 {
 }
 
 .close-modal:hover {
-  color: #f34c4c;
+  color: var(--light-red);
 }
 
 #title {
@@ -249,7 +286,7 @@ ul {
 
 ul li {
   font-size: 2em;
-  color: #f34c4c;
+  color: var(--light-red);
 }
 
 ul li[title]::before {
@@ -273,6 +310,162 @@ ul li[title]::before {
   }
   .modal {
     max-width: 50vw;
+  }
+}
+
+.dark-mode-button {
+  --padding: 20px;
+  padding-top: var(--padding);
+  padding-bottom: var(--padding);
+}
+
+.switch-button {
+  background: var(--dark-gray-color);
+  border-radius: 30px;
+  overflow: hidden;
+  width: 200px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bolder;
+  letter-spacing: 1px;
+  color: white;
+  position: relative;
+  padding-right: 120px;
+  position: relative;
+}
+
+.switch-button:before {
+  content: 'Dark';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.switch-button-checkbox {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 2;
+}
+
+.switch-button-checkbox:checked + .switch-button-label:before {
+  -webkit-transform: translateX(120px);
+          transform: translateX(120px);
+  -webkit-transition: -webkit-transform 300ms linear;
+  transition: -webkit-transform 300ms linear;
+  transition: transform 300ms linear;
+  transition: transform 300ms linear, -webkit-transform 300ms linear;
+}
+
+.switch-button-checkbox + .switch-button-label {
+  position: relative;
+  padding: 15px;
+  display: block;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+  isolation: isolate;
+}
+
+.switch-button-checkbox + .switch-button-label:before {
+  content: '';
+  background: var(--light-green);
+  position: absolute;
+  inset: 0;
+  border-radius: 30px;
+  -webkit-transition: -webkit-transform 300ms;
+  transition: -webkit-transform 300ms;
+  transition: transform 300ms;
+  transition: transform 300ms, -webkit-transform 300ms;
+  z-index: -1;
+}
+
+.switch-button-checkbox + .switch-button-label .switch-button-label-span {
+  position: relative;
+}
+
+@media only screen and (max-width: 715px) {
+  .switch-button {
+    width: 100%;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    text-align: center;
+    font-size: 10px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    color: white;
+    position: relative;
+    padding-right: 80px;
+    position: relative;
+  }
+  .switch-button:before {
+    width: 55px;
+  }
+  .switch-button-checkbox {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 2;
+  }
+  .switch-button-checkbox:checked + .switch-button-label:before {
+    -webkit-transform: translateX(76px);
+            transform: translateX(76px);
+    -webkit-transition: -webkit-transform 300ms linear;
+    transition: -webkit-transform 300ms linear;
+    transition: transform 300ms linear;
+    transition: transform 300ms linear, -webkit-transform 300ms linear;
+  }
+  .switch-button-checkbox + .switch-button-label {
+    position: relative;
+    padding: 5px;
+    display: block;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    pointer-events: none;
+    isolation: isolate;
+  }
+  .switch-button-checkbox + .switch-button-label:before {
+    content: '';
+    background: var(--light-green);
+    position: absolute;
+    inset: 0;
+    border-radius: 30px;
+    -webkit-transition: -webkit-transform 300ms;
+    transition: -webkit-transform 300ms;
+    transition: transform 300ms;
+    transition: transform 300ms, -webkit-transform 300ms;
+    z-index: -1;
+  }
+  .switch-button-checkbox + .switch-button-label .switch-button-label-span {
+    position: relative;
   }
 }
 /*# sourceMappingURL=main.css.map */

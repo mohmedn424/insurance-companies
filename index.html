@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" data-theme='dark'>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,10 +22,20 @@
   <body>
     <h1>شركات التأمين</h1>
     <div class="cards-wrab">
+
+      <div class="card dark-mode-button">
+        <div class="switch-button">
+          <input name="theme" class="switch-button-checkbox" type="checkbox" id="dn"></input>
+          <label class="switch-button-label" for=""><span class="switch-button-label-span">Light</span></label>
+        </div>
+      </div>
+
+
       <a href="https://percent-calc.pages.dev/" class="card button">
         حاسبة النسبة
       </a>
 
+      
       <div
         data-mobile="123456"
         data-address="شركة / الاهلي للخدمات الطبية
@@ -224,6 +234,7 @@
         <span class="ind stop"></span>
         
       </div>
+
     </div>
 
     <div class="modal hidden">
@@ -235,7 +246,7 @@
       </ul>
     </div>
     <div class="overlay hidden"></div>
-
+<script src="./dark-mode.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
