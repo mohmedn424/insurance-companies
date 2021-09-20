@@ -1,5 +1,5 @@
 // the cache version gets updated every time there is a new deployment
-const CACHE_VERSION = '2.0.1';
+const CACHE_VERSION = '3.0.0';
 const CURRENT_CACHE = `main-${CACHE_VERSION}`;
 
 // these are the routes we are going to cache for offline support
@@ -81,7 +81,9 @@ const update = (request) =>
 // from the network with a timeout, if something fails serve from cache)
 self.addEventListener('fetch', (evt) => {
   evt.respondWith(
-    fromNetwork(evt.request, 10000).catch(() => fromCache(evt.request))
+    fromNetwork(evt.request, 10000).catch(() =>
+      fromCache(evt.request)
+    )
   );
   evt.waitUntil(update(evt.request));
 });
