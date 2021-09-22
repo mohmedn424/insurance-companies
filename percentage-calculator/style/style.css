@@ -50,6 +50,50 @@ body {
   margin: 0;
 }
 
+.back-btn {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 0;
+}
+
+.back-btn .gg-arrow-left {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  display: block;
+  -webkit-transform: scale(2);
+          transform: scale(2);
+  width: 22px;
+  height: 22px;
+}
+
+.back-btn .gg-arrow-left::after, .back-btn .gg-arrow-left::before {
+  content: '';
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  left: 3px;
+}
+
+.back-btn .gg-arrow-left::after {
+  width: 8px;
+  height: 8px;
+  border-bottom: 2px solid;
+  border-left: 2px solid;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  bottom: 7px;
+}
+
+.back-btn .gg-arrow-left::before {
+  width: 16px;
+  height: 2px;
+  bottom: 10px;
+  background: currentColor;
+}
+
 .calc-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -64,8 +108,33 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 3vh;
   width: 38.4vh;
+}
+
+.calc-container .top-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .calc-container .top-buttons {
+    width: 80%;
+  }
+  .calc-container .top-buttons button {
+    padding: 20px;
+  }
+  .calc-container .top-buttons .gg-arrow-left {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 
 .calc-container button,

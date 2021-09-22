@@ -9,37 +9,31 @@
     <title>حاسبة النسبة</title>
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="./style/style.css" />
-    <link rel="manifest" href="manifest.webmanifest" />
-    <link rel="apple-touch-icon" href="/icon-192x192.png" />
-    <link rel="apple-touch-icon" href="/icon-256x256.png" />
-    <link rel="apple-touch-icon" href="/icon-384x384.png" />
-    <link rel="apple-touch-icon" href="/icon-512x512.png" />
-    <meta name="apple-mobile-web-app-status-bar" content="#fff" />
-    <meta name="theme-color" content="#fff" />
   </head>
   <body>
-    <div class="toggleWrapper">
-      <input name="theme" type="checkbox" class="dn" id="dn" />
-      <label for="dn" class="toggle">
-        <span class="toggle_handler">
-          <span class="crater crater--1"></span>
-          <span class="crater crater--2"></span>
-          <span class="crater crater--3"></span>
-        </span>
-        <span class="star star--1"></span>
-        <span class="star star--2"></span>
-        <span class="star star--3"></span>
-        <span class="star star--4"></span>
-        <span class="star star--5"></span>
-        <span class="star star--6"></span>
-      </label>
-    </div>
     <div class="calc-container">
+      <div class="top-buttons">
+        <button onclick="window.history.back();" class="back-btn">
+          <span class="gg-arrow-left"></span>
+        </button>
+        <div class="toggleWrapper">
+          <input name="theme" type="checkbox" class="dn" id="dn" />
+          <label for="dn" class="toggle">
+            <span class="toggle_handler">
+              <span class="crater crater--1"></span>
+              <span class="crater crater--2"></span>
+              <span class="crater crater--3"></span>
+            </span>
+            <span class="star star--1"></span>
+            <span class="star star--2"></span>
+            <span class="star star--3"></span>
+            <span class="star star--4"></span>
+            <span class="star star--5"></span>
+            <span class="star star--6"></span>
+          </label>
+        </div>
+      </div>
       <form>
         <div class="input">
           <label>
@@ -60,12 +54,10 @@
               autocomplete="off"
             />
           </label>
-          <button class="red" id="calcBt" type="button">احسب</button>
+          <button id="calcBt" type="button">احسب</button>
         </div>
         <div class="output">
-          <button class="black" id="deleteBt" type="reset">
-            امسح
-          </button>
+          <button id="deleteBt" type="reset">امسح</button>
           <label>
             <input
               type="number"
