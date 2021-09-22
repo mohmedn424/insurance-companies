@@ -11,7 +11,6 @@ function disableDarkMode() {
 }
 
 checkbox.addEventListener('change', function () {
-  console.log('cliced');
   if (this.checked) {
     enabeleDarkMode();
   } else {
