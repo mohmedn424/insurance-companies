@@ -1,5 +1,5 @@
 // the cache version gets updated every time there is a new deployment
-const CACHE_VERSION = '3.0.0';
+const CACHE_VERSION = '3.2.0';
 const CURRENT_CACHE = `main-${CACHE_VERSION}`;
 
 // these are the routes we are going to cache for offline support
@@ -22,6 +22,10 @@ const cacheFiles = [
   'https://fonts.gstatic.com/s/tajawal/v3/Iurf6YBj_oCad4k1l5anHrFpiQ.woff2',
   'https://fonts.gstatic.com/s/tajawal/v3/Iurf6YBj_oCad4k1l7KmHrRpiYlJ.woff2',
   'https://fonts.gstatic.com/s/tajawal/v3/Iurf6YBj_oCad4k1l7KmHrFpiQ.woff2',
+  '/percentage-calculator/index.html',
+  '/percentage-calculator/app.js',
+  '/percentage-calculator/dark-mode.js',
+  '/percentage-calculator/style/style.css',
 ];
 
 // on activation we clean up the previously registered service workers
