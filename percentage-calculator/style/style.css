@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap");
 html {
-  --color-red: #ae1100;
+  --special-font-clr: #ae1100;
   --color-bg: #ebecf0;
   --color-shadow: #babecc;
   --color-white: #ffffff;
@@ -8,17 +8,22 @@ html {
 }
 
 html[data-theme='dark'] {
-  --color-red: #13cfbc;
+  --special-font-clr: #13cfbc;
   --color-bg: #1a1a1a;
-  --color-shadow: rgba(0, 0, 0, 0.5);
+  --color-shadow: rgba(0, 0, 0, 0.9);
   --color-white: #1a1a1a;
   --font-color: white;
 }
 
+*,
 *::after,
 *::before {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 body,
@@ -48,6 +53,29 @@ body {
   height: 100vh;
   overflow: hidden;
   margin: 0;
+}
+
+button {
+  width: 100%;
+  padding: 35px 0;
+  color: var(--font-color);
+  font-weight: bold;
+  -webkit-box-shadow: -5px -5px 20px var(--color-white), 5px 5px 20px var(--color-shadow);
+          box-shadow: -5px -5px 20px var(--color-white), 5px 5px 20px var(--color-shadow);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:hover {
+  -webkit-box-shadow: -2px -2px 5px var(--color-white), 2px 2px 5px var(--color-shadow);
+          box-shadow: -2px -2px 5px var(--color-white), 2px 2px 5px var(--color-shadow);
+}
+
+button:active {
+  -webkit-box-shadow: inset 1px 1px 2px var(--color-shadow), inset -1px -1px 2px var(--color-white);
+          box-shadow: inset 1px 1px 2px var(--color-shadow), inset -1px -1px 2px var(--color-white);
 }
 
 .back-btn {
@@ -126,7 +154,7 @@ body {
 
 @media only screen and (max-width: 600px) {
   .calc-container .top-buttons {
-    width: 80%;
+    width: 75%;
   }
   .calc-container .top-buttons button {
     padding: 20px;
@@ -181,8 +209,8 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 }
 
 .result,
-.red {
-  color: var(--color-red);
+.special-font-clr {
+  color: var(--special-font-clr);
 }
 
 .input,
@@ -200,29 +228,6 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-button {
-  width: 100%;
-  padding: 35px 0;
-  color: var(--font-color);
-  font-weight: bold;
-  -webkit-box-shadow: -5px -5px 20px var(--color-white), 5px 5px 20px var(--color-shadow);
-          box-shadow: -5px -5px 20px var(--color-white), 5px 5px 20px var(--color-shadow);
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-button:hover {
-  -webkit-box-shadow: -2px -2px 5px var(--color-white), 2px 2px 5px var(--color-shadow);
-          box-shadow: -2px -2px 5px var(--color-white), 2px 2px 5px var(--color-shadow);
-}
-
-button:active {
-  -webkit-box-shadow: inset 1px 1px 2px var(--color-shadow), inset -1px -1px 2px var(--color-white);
-          box-shadow: inset 1px 1px 2px var(--color-shadow), inset -1px -1px 2px var(--color-white);
 }
 
 .toggleWrapper {
